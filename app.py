@@ -7,7 +7,7 @@ from sklearn.preprocessing import StandardScaler
 
 app = Flask(__name__,template_folder="template",static_folder="static")
 
-model = pickle.load(open('../Car-Price-prediction/car_price_model.pkl', 'rb'))
+
 
 @app.route('/',methods=['GET'])
 def Home():
@@ -40,5 +40,5 @@ def predict():
         return render_template('index.html')
 
 if __name__=="__main__":
-    
+    model = pickle.load(open('car_price_model.pkl', 'rb'))
     app.run(debug=True)
