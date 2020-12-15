@@ -10,7 +10,7 @@ app = Flask(__name__,template_folder="template",static_folder="static")
 model = joblib.load('cars_price_modal.pkl')
 
 @app.route('/',methods=['GET'])
-def Home():
+def home():
     return render_template('index.html')
 
 
