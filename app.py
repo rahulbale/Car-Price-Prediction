@@ -21,7 +21,7 @@ def predict():
         Year = int(request.form['Year'])
         Present_Price=float(request.form['Present_Price'])
         Kms_Driven=int(request.form['Kms_Driven'])
-        Kms_Driven2=np.log(Kms_Driven)
+        #Kms_Driven2=np.log(Kms_Driven)
         Fuel_Type=int(request.form['Fuel_Type_Petrol'])
         Year=2020-Year
         Seller_Type=int(request.form['Seller_Type_Individual'])
