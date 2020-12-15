@@ -5,7 +5,7 @@ import sklearn
 from sklearn.preprocessing import StandardScaler
 import joblib
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder="template",static_folder="static")
 
 model = joblib.load('cars_price_modal.pkl')
 
