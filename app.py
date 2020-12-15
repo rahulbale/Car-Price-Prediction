@@ -23,10 +23,10 @@ def predict():
         Present_Price=float(request.form['Present_Price'])
 
         Kms_Driven=int(request.form['Kms_Driven'])
-
+        Kms_Driven2=np.log(Kms_Driven)
         Fuel_Type=int(request.form['Fuel_Type'])
 
-        Years=2020-Year
+        Year=2020-Year
 
         Seller_Type=int(request.form['Seller_Type'])
 
@@ -34,7 +34,7 @@ def predict():
 
         Owner = int(request.form['Owner'])
 
-        prediction=model.predict([[Years,Present_Price,Kms_Driven,Fuel_Type,Seller_Type,Transmission_Mannual,Owner]])
+        prediction=model.predict([[Year,Present_Price,Kms_Driven2,Fuel_Type,Seller_Type,Transmission_Mannual,Owner]])
 
         output=round(prediction[0],2)
         
