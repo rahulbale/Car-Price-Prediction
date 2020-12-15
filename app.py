@@ -42,7 +42,7 @@ def predict():
 
 def ValuePredictor(to_predict_list, size):
     to_predict = np.array(to_predict_list).reshape(1,size)
-    if(size==7):
+    if(size==6):
         loaded_model = joblib.load("cars_price_modal.pkl")
         result = loaded_model.predict(to_predict)
     return result[0]
@@ -54,8 +54,8 @@ def predict():
         to_predict_list = list(to_predict_list.values())
         to_predict_list = list(map(float, to_predict_list))
          #diabetes
-        if(len(to_predict_list)==7):
-            result = ValuePredictor(to_predict_list,7)
+        if(len(to_predict_list)==6):
+            result = ValuePredictor(to_predict_list,6)
             if result<0:
                 return render_template('result.html',prediction_texts="Sorry you cannot sell this car")
             else:
