@@ -28,7 +28,7 @@ def predict():
         Transmission_Mannual=int(request.form['Transmission_Mannual'])
         Owner = int(request.form['Owner'])
 
-        prediction=model.predict([[Year,Present_Price,Kms_Driven2,Fuel_Type,Seller_Type,Transmission_Mannual,Owner]])
+        prediction=model.predict([[Year,Present_Price,Kms_Driven,Fuel_Type,Seller_Type,Transmission_Mannual,Owner]])
 
         output=round(prediction[0],2)
 
