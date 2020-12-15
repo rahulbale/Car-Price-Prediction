@@ -20,144 +20,153 @@
 
 
 </head>
-
 <body>
 
-<!-- As a heading -->
-<nav class="navbar navbar-dark bg-dark fixed-top">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <h1 class="navbar-brand">Car PRICE!!</h1>
-            <div class="heading-underline"></div>
-        </div>
+    <div style="color:blue">
+        <form action="{{ url_for('predict')}}" method="post">
+            <h2>Predictive analysis</h2>
+            <h3>Year</h3>
+            <input id="first" name="Year" type="number ">
+            <h3>What is the Showroom Price?(In lakhs)</h3><br><input id="second" name="Present_Price" required="required">
+            <h3>How Many Kilometers Drived?</h3><input id="third" name="Kms_Driven" required="required">
+            <h3>How much owners previously had the car(0 or 1 or 3) ?</h3><br><input id="fourth" name="Owner" required="required">
+            <h3>What Is the Fuel type?</h3><br><select name="Fuel_Type_Petrol" id="fuel" required="required">
+                <option value="Petrol">Petrol</option>
+                <option value="Diesel">Diesel</option>
+                <option value="Diesel">CNG</option>
+            </select>
+            <h3>Are you A Dealer or Individual</h3><br><select name="Seller_Type_Individual" id="resea" required="required">
+                <option value="Dealer">Dealer</option>
+                <option value="Individual">Individual</option>
+            </select>
+            <h3>Transmission type</h3><br><select name="Transmission_Mannual" id="research" required="required">
+                <option value="Mannual">Manual Car</option>
+                <option value="Automatic">Automatic Car</option>
+            </select>
+            <br><br><button id="sub" type="submit ">Calculate the Selling Price</button>
+            <br>
+
+
+
+
+        </form>
+
+
+
+        <br><br><h3>{{ prediction_text }}<h3>
     </div>
-</nav>
-
-<div class="container text-center">
-    <form action="{{ url_for('predict')}}" method="post">
-        <div class="row">
-           
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">Year</h5>
-
-                        <input name="Year" id="Year" required="required">
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">What is the Present Price?(In lakhs)</h5>
-                        <input name="Present_Price" id="Present_Price" required="required">
-                    </div>
-                </div>
-            </div>
-        </div>
 
 
-            <br>
-            <br>
-            <br>
-
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">How many Kilometer drived?</h5>
-                        <input name="Kms_Driven" id="Kms_Driven" required="required">
-                    </div>
-                </div>
-            </div>
-                <div class="col-sm-6">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">What is the Fuel Type?</h5>
-                            <select name="Fuel_Type" id="Fuel_Type" required="required">
-                                <option value="0">CNG</option>
-                                <option value="1">Diesel</option>
-                                <option value="2">Petrol</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <br>
-            <br>
-            <br>
-
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">What is Seller Type</h5>
-                        <select name="Seller_Type" id="Seller_Type" required="required">
-                            <option value="0">Dealer</option>
-                            <option value="1">Individual</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">What is Transmission Mannual?</h5>
-                        <select name="Transmission_Mannual" id="Transmission_Mannual" required="required">
-                            <option value="0">Automatic</option>
-                            <option value="1">Manual</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <br>
-        <br>
-        <br>
-
-        <div class="row">
-            <div class="col-sm-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title">How many previous owner does car as?(0 or 1 or 3)</h5>
-                        <input name="Owner" id="Owner" required="required">
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6">
-                <div class="vertical-center">
-                     <button type="submit" value="Submit" class="btn btn-success btn-lg">Predict</button>
-                </div>
-            </div>
-        </div>
-    </form>
-
-        <br>
-        <br>
 
 
-</div>
-
-
-     <!---- Starting footer ----->
-    <footer>
-        <div class="row justify-content-center">
-            <div class="col-md-5 text-center">
-                <a href="https://www.facebook.com/rj.rock.5074" target="_blank"><i class="fab fa-facebook-square"></i></a>
-                <a href="https://www.instagram.com/_rahulbale_/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://github.com/rahulbale?tab=repositories" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
-            <hr class="socket">
-                &copy;Rahul Bale.
-            </div>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-
+    <style>
+        body {
+            background-color: lightslategray;
+            text-align: center;
+            padding: 0px;
+        }
+        
+        #research {
+            font-size: 18px;
+            width: 100px;
+            height: 23px;
+            top: 23px;
+        }
+        
+        #box {
+            border-radius: 60px;
+            border-color: 45px;
+            border-style: solid;
+            font-family: cursive;
+            text-align: center;
+            background-color: rgb(168, 131, 61);
+            font-size: medium;
+            position: absolute;
+            width: 700px;
+            bottom: 9%;
+            height: 850px;
+            right: 30%;
+            padding: 0px;
+            margin: 0px;
+            font-size: 14px;
+        }
+        
+        #fuel {
+            width: 83px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 20px;
+        }
+        
+        #fuel:hover {
+            background-color: coral;
+        }
+        
+        #research {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #research:hover {
+            background-color: coral;
+        }
+        
+        #resea {
+            width: 99px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #resea:hover {
+            background-color: coral;
+        }
+        
+        #sub {
+            width: 120px;
+            height: 43px;
+            text-align: center;
+            border-radius: 14px;
+            font-size: 18px;
+        }
+        
+        #sub:hover {
+            background-color: darkcyan;
+        }
+        
+        #first {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #second {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #third {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        #fourth {
+            border-radius: 14px;
+            height: 25px;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
 </body>
 
 </html>
