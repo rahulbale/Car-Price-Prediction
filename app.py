@@ -7,7 +7,7 @@ import joblib
 
 app = Flask(__name__,template_folder="template",static_folder="static")
 
-model = joblib.load('cars_price_modal')
+model = joblib.load('cars_price_modal_new')
 
 @app.route('/',methods=['GET'])
 def home():
