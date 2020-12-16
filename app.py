@@ -15,7 +15,7 @@ def home():
 
 @app.route("/predict", methods=['POST'])
 def predict():
-    Fuel_Type_Diesel=0
+    
     if request.method == 'POST':
         Year = int(request.form['Year'])
         Present_Price=float(request.form['Present_Price'])
