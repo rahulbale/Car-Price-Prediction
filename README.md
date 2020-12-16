@@ -24,9 +24,9 @@ This whole Project is Deployed over Heroku using Flask
 
 # Steps used for Deployment:
 
-a. Created the ML model and saved it using joblib.
-b. Created app.py and the webpage page it will render to.
-d. Similarly Deployed all models and connected them to the home page inside heroku server.
+1. Created the ML model and saved it using joblib.
+2. Created app.py and the webpage page it will render to.
+3. Similarly Deployed all models and connected them to the home page inside heroku server.
 
 
 
