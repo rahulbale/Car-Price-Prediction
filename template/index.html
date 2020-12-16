@@ -33,6 +33,7 @@
     </div>
 </nav>
 
+    <!---
 <div class="container text-center">
     <form action="{{ url_for('predict')}} " method="POST">
         <div class="row">
@@ -141,7 +142,114 @@
 
 
     </div>
+-->
+    <div class="container text-center">
+    <form action="{{ url_for('predict')}} " method="POST">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Year</h5>
+                        <input id="first" name="Year" type="number">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5>What is the Showroom Price?(In lakhs)</h5>
+                        <input id="second" name="Present_Price" required="required">
+                    </div>
+                </div>
+            </div>
+        </div>
 
+
+            <br>
+            <br>
+            <br>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">How many Kilometer drived?</h5>
+                        <input id="third" name="Kms_Driven" required="required">
+                    </div>
+                </div>
+            </div>
+                <div class="col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">What is the Fuel Type?</h5>
+                            <select name="Fuel_Type_Petrol" id="fuel" required="required">
+                                <option value="Petrol">Petrol</option>
+                                <option value="Diesel">Diesel</option>
+                                <option value="CNG">CNG</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+            <br>
+            <br>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">What is Seller Type</h5>
+                        <select name="Seller_Type_Individual" id="resea" required="required">
+                            <option value="Dealer">Dealer</option>
+                            <option value="Individual">Individual</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">What is Transmission Mannual?</h5>
+                        <select name="Transmission_Mannual" id="research" required="required">
+                            <option value="Mannual">Manual Car</option>
+                            <option value="Automatic">Automatic Car</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <br>
+        <br>
+
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">How many previous owner does car as?(0 or 1 or 3)</h5>
+                        <input id="fourth" name="Owner" required="required">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="vertical-center">
+                     <button type="submit" value="Submit" class="btn btn-success btn-lg">Predict</button>
+                </div>
+            </div>
+        </div>
+
+
+        </form>
+
+        <br>
+        <br>
+
+
+
+    </div>
 
      <!---- Starting footer ----->
     <footer>
